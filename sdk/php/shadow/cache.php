@@ -74,7 +74,6 @@ class Shadow_Cache implements Shadow_Factory {
             }
         } catch (Exception $e) {
         }
-        $this->_redis = null;
     }
     //===================================================================================
     /**
