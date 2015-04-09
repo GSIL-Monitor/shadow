@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<seelog type="asynctimer" asyncinterval="5000000" minlevel="debug" maxlevel="error">
+    <outputs>
+        <console formatid="SERIOUS" />
+        <filter levels="error">
+            <rollingfile formatid="SERIOUS" type="size" filename="/data/logs/shadow/error.log" maxsize="268435456" maxrolls="8" />
+        </filter>
+        <filter levels="info">
+            <rollingfile formatid="NORMAL" type="size" filename="/data/logs/shadow/info.log" maxsize="268435456" maxrolls="8" />
+        </filter>
+    </outputs>
+    <formats>
+        <format id="MSG" format="%Date %Time -- %Msg%n"/>
+        <format id="NORMAL" format="%Date %Time [%LEV] %Msg%n"/>
+        <format id="SERIOUS" format="%Date %Time [%LEV] %Func:%Line -- %Msg%n"/>
+    </formats>
+</seelog>

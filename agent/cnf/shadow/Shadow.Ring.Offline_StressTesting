@@ -1,0 +1,17 @@
+datetime:   2015-03-10 13:00        # be precise to minute
+protocol_version:   1.0
+owner: zhaoxi
+alert_receivers:
+migration:
+app_names:
+    - StressTesting 
+shards:
+    - # one shard is one object
+      master: 192.168.5.106:6379,2      # ip:port,weight
+    - # one shard is one object
+      master: 192.168.5.106:6380,2      # ip:port,weight
+    - # one shard is one object
+      master: 192.168.5.106:6381,2      # ip:port,weight
+    - # one shard is one object
+      master: 192.168.5.106:6382,2      # ip:port,weight
+

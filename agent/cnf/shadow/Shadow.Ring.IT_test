@@ -1,0 +1,1 @@
+{"key":"Shadow.Ring.IT_test","md5":"095c82c1c52cb3d406157840395efd9c","value":"datetime:   2015-01-01 00:00        # be precise to minute\nprotocol_version:   1.0\nowner:\nalert_receivers:\nmigration:\napp_names:\n    - TEST\nshards:\n    - # one shard is one object\n      master: localhost:6379,1      # ip:port,weight\n      slaves: []                    # empty content"}

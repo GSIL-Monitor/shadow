@@ -1,0 +1,15 @@
+datetime:   2015-01-26 00:00        # be precise to minute
+protocol_version:   1.0
+owner: zhaoxi
+alert_receivers:
+migration:
+app_names:
+    - 
+shards:
+    - # one shard is one object
+      master: 192.168.5.107:6380,1      # ip:port,weight
+    - # one shard is one object
+      master: 192.168.5.106:6380,1      # ip:port,weight
+    - # one shard is one object
+      master: 192.168.5.106:6381,1      # ip:port,weight
+
