@@ -142,7 +142,9 @@ class Shadow_Cache implements Shadow_Factory {
             $this->_redis->close();
             return true;
         } catch (Exception $e) {
-            $this->_redis->close();
+            if ($this->_redis !== null) {
+                $this->_redis->close();
+            }
             throw $e;
         }
     }
@@ -203,7 +205,9 @@ class Shadow_Cache implements Shadow_Factory {
             $this->_redis->close();
             return $r;
         } catch (Exception $e) {
-            $this->_redis->close();
+            if ($this->_redis !== null) {
+                $this->_redis->close();
+            }
             throw $e;
         }
     }
@@ -237,7 +241,9 @@ class Shadow_Cache implements Shadow_Factory {
             $this->_redis->close();
             return $r;
         } catch (Exception $e) {
-            $this->_redis->close();
+            if ($this->_redis !== null) {
+                $this->_redis->close();
+            }
             throw $e;
         }
     }
@@ -276,7 +282,9 @@ class Shadow_Cache implements Shadow_Factory {
             $this->_redis->close();
             return $r;
         } catch (Exception $e) {
-            $this->_redis->close();
+            if ($this->_redis !== null) {
+                $this->_redis->close();
+            }
             throw $e;
         }
     }
