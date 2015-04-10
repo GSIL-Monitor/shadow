@@ -34,6 +34,7 @@ function testShadow($app, $size, $readTime, $writeTime, $index, $maxDuration) {
     $resp["set_ok"] = 0;
     $resp["get_ok"] = 0;
 
+
     generate($app, $size, $readTime, $writeTime, $resp, $records, $maxDuration);
     // file
     writeSummary($index, $resp, $size);
@@ -78,7 +79,9 @@ function run($app, $size, $readTime, $writeTime, &$resp, &$cost) {
                 $resp["set_ok"] += 1;
             }
         } catch (Exception $e) {
-            $content = var_export($e, true) . "\n";
+            $date = new DateTime('now');
+            $s = $date->format('Y-m-d H:i:s');
+            $content = $s . "\n" . var_export($e, true) . ";\n";
             file_put_contents($errFile, $content, FILE_APPEND);
         }
     }
@@ -94,10 +97,13 @@ function run($app, $size, $readTime, $writeTime, &$resp, &$cost) {
                 $resp["get_ok"] += 1;
             }
         } catch (Exception $e) {
-            $content = var_export($e, true) . "\n";
+            $date = new DateTime('now');
+            $s = $date->format('Y-m-d H:i:s');
+            $content = $s . "\n" . var_export($e, true) . ";\n";
             file_put_contents($errFile, $content, FILE_APPEND);
         }
     }
+
     $cache = null;
 }
 
