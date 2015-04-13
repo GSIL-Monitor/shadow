@@ -231,7 +231,7 @@ class Shadow_Cache implements Shadow_Factory {
             $msg = msgpack_pack($value);
             if (mb_strlen($msg, "UTF-8") > self::MAX_VALUE_BYTES) {
                 $this->close();
-                throw new RuntimeException("Illegal value length. It beyonds " . self::MAX_VALUE_BYTES . " bytes.");
+                throw new RuntimeException("Illegal value length. It larger than " . self::MAX_VALUE_BYTES . " bytes.");
             }
             //--------------------------------fake-----------------------------
             $this->sendFake($key, $async, "SETEX");
